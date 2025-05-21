@@ -1,0 +1,176 @@
+/*code by nixy*/
+/*discord nixy4ycososi*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #161616;
+    color: #1a1a1a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('assets/img/animated-bg.gif'); /* Replace with your actual GIF path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #101010; /* Fallback color if GIF fails to load */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay for better text/icon readability */
+    z-index: 1;
+}
+
+.banner-content, .banner .fa-arrow-down {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Space between avatar, text, and social links */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner .fa-arrow-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ffffff;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        bottom: 20px;
+    }
+    50% {
+        bottom: 30px;
+    }
+    100% {
+        bottom: 20px;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #00b7ff;
+}
+
+.social-links svg {
+    width: 32px;
+    height: 32px;
+}
+
+.projects {
+  background-color: #161616;
+  padding: 80px 0;
+}
+
+.card {
+  background-color: #1a1a1a;
+  width: 500%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 183, 255, 0.2);
+}
+
+.card-content {
+  padding: 12px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card-content h2 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.card-content p {
+  color: #cccccc;
+  font-size: 0.85em;
+  margin: 6px 0 10px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 95%;
+  }
+
+  .card-content h2 {
+    font-size: 1.1em;
+  }
+
+  .card-content p {
+    font-size: 0.8em;
+  }
+}
+
+.xd {
+  color: #ffffff;
+  background-color: var(--background-color);
+  font-size: 15px;
+  padding: 5px ;
+  position: center;
+}
